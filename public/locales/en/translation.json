@@ -1,0 +1,88 @@
+{
+  "landing": {
+    "header": {
+      "play-txt": "Register now",
+      "h-1": {
+        "text-1": "deposit bonus",
+        "text-2": "get no deposit bonus"
+      },
+      "h-2": {
+        "text-1": "500% DEPOSIT BONUS",
+        "text-2": "TAKE YOUR CHANCE TO WIN"
+      },
+      "h-3": {
+        "text-1": "deposit bonus",
+        "text-2": "REAL PEOPLE, REAL DEALERS, REAL CARDS"
+      }
+    },
+    "deals": {
+      "title": "Welcome Deals",
+      "deal-1": {
+        "title": "NO DEPOSIT BONUS",
+        "text": "Try Mima and get no deposit bonus for your first game"
+      },
+      "deal-2": {
+        "title": "1000$ weekly Leaderboard",
+        "text": "Battle against real people and Get real Money"
+      },
+      "deal-3": {
+        "title": "500% deposit bonus",
+        "text": "All players will receive 500% bonus of their Deposits"
+      },
+      "deal-4": {
+        "title": "10XBB FOR FREE",
+        "text": "Yes Yes Yes ! Play for real and get 10 Big Blind as a gift!"
+      },
+      "get-text": "get package"
+    },
+    "about": {
+      "title": "About MiMa",
+      "inf-1": "MIMA Live poker is a new, state of the art Poker gaming platform where you can enjoy the most played Poker Game in the world: Texas Hold'em. Our Poker rooms are open 24/7.",
+      "inf-1-title": "Who we are",
+      "inf-2": "We combine real Texas Hold'em Poker with the newest technologies for Live Poker. Join us online from/with your table, laptop or desktop PC.",
+      "inf-2-title": "Online poker platform",
+      "inf-3": "Real professional dealers will welcome you and make your Poker game an exciting entertainment, without bots and HUD’s.",
+      "inf-3-title": "Real dealers/Real cards"
+    },
+    "register": {
+      "title": "It's high time to join MIMA",
+      "title-form": "Registration form",
+      "title-form-registered": "You have registered",
+      "msg": "We are more than happy to have you involved in MIMA Poker testing period. With your feedback, we believe to create an exciting gaming experience.",
+      "btn": "register now",
+      "inputs": {
+        "first_name": "First Name",
+        "last_name": "Last Name",
+        "username": "Username",
+        "email": "Email Address",
+        "password": "Password",
+        "confirm_password": "Confirm Password",
+        "country": "Select a Country",
+        "address": "Address",
+        "phone_number": "Mobile Number",
+        "user_id_number": "ID Number",
+        "birth_date": "Birth Date",
+        "agree": "Agree with",
+        "errors": {
+          "pattern": "Enter a valid data",
+          "required": "(required)",
+          "country": "Please select a country",
+          "birthdate": "Please select your birth date",
+          "minAge": "Your age must be 18+",
+          "email": "Email already exists",
+          "mustAgree": "You must agree on Terms And Conditions",
+          "pass-val-chars": "Password must have 6-30 characters",
+          "pass-val": "Password must have at least one uppercase letter, one number and one special character",
+          "pass-match": "Passwords must match"
+        },
+        "terms": "Terms & Conditions"
+      }
+    },
+    "footer": {
+      "copyright": "All rights reserved.",
+      "address": "#4 T. Chovelidze Str, Tbilisi, 0108, GE",
+      "terms": "Terms & Conditions",
+      "privacy": "Privacy Statement"
+    }
+  }
+}

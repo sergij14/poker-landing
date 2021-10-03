@@ -1,17 +1,25 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React, { Suspense } from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
+import "./i18n";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import Loader from "./Loader";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+const RootApp = (
+  <BrowserRouter>
+    <Suspense
+      fallback={
+        <div style={{ textAlign: "center" }}>
+          <Loader />
+        </div>
+      }
+    >
+      <Switch>
+        <Route exact path="/" component={App} />
+        <Route exact path="/:id" component={App} />
+      </Switch>
+    </Suspense>
+  </BrowserRouter>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+ReactDOM.render(RootApp, document.getElementById("root"));

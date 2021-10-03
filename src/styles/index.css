@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@font-face {
+  font-family: "bpgarial";
+  src: local("bpgarial"),
+    url("../assets/fonts/bpg_arial_2009.ttf") format("truetype");
+  font-weight: normal;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .game-btn {
+    @apply transform hover:-translate-y-2 transition-all duration-200 ease-linear;
+  }
+  .login-input {
+    @apply block py-2 px-4 rounded-lg;
+  }
+  @variants responsive {
+    .min-height-720 {
+      min-height: 720px;
+    }
+    .min-height-920 {
+      min-height: 920px;
+    }
+  }
+}
+
+.toast {
+  @apply bg-primary-default text-base font-bold text-white;
+}
+
+body {
+  background-image: url("../assets/images/bg.jpg");
+  background-size: cover;
+}
+
+.min-height-680 {
+  min-height: 680px;
+}
+
+.loader {
+  border-top-color: #e17724;
+  -webkit-animation: spinner 1.5s linear infinite;
+  animation: spinner 1.5s linear infinite;
+}
+
+@-webkit-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
