@@ -172,7 +172,7 @@ const Register = () => {
                   : ""
               }`}
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10 mb-6">
                 {basicFields.map(({ name, type, label }) => (
                   <div className="relative col-span-1" key={name}>
                     {name === "password" || name === "confirm_password" ? (

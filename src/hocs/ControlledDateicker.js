@@ -17,7 +17,7 @@ export const ControlledDateicker = ({
     <div className="relative">
       <input
         readOnly="readOnly"
-        className="login-input mt-6"
+        className="login-input"
         onFocus={openCalendar}
         value={value && `${value} - ${format}`}
         onBlur={onBlur}
@@ -46,9 +46,7 @@ export const ControlledDateicker = ({
       }) => (
         <>
           <DatePicker
-            onChange={(date) => {
-              onChange(date?.isValid ? date : "");
-            }}
+            onChange={(date) => onChange(date?.isValid ? date : "")}
             format={format}
             render={<CustomDateInput onBlur={onBlur} />}
             containerClassName="w-full"
