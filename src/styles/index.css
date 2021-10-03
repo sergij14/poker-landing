@@ -45,6 +45,82 @@ body {
   animation: spinner 1.5s linear infinite;
 }
 
+.rmdp-week-day {
+  color: #f6740e !important;
+}
+
+.rdmp-shadow {
+  display: none !important;
+}
+
+.rmdp-arrow-container:hover {
+  background-color: #ffba82 !important;
+}
+
+.rmdp-arrow {
+  border: solid #b5570d !important;
+  border-width: 0 2px 2px 0 !important;
+}
+
+.rmdp-day.rmdp-today span {
+  background-color: #fb882d !important;
+}
+
+.rmdp-day.rmdp-selected span:not(.highlight) {
+  background-color: #e17724 !important;
+}
+
+.rmdp-header-values {
+  color: #331b08 !important;
+  position: relative !important;
+}
+
+.rmdp-header-values:after {
+  content: "";
+  position: absolute;
+  right: -16px;
+  top: 17px;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid black;
+  clear: both;
+}
+
+.rmdp-header-values:before {
+  content: "";
+  position: absolute;
+  left: -14px;
+  top: 17px;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid black;
+  clear: both;
+}
+
+.rmdp-header-values span {
+  border-bottom: 1px solid black !important;
+}
+
+.rmdp-header-values span:nth-child(2) {
+  margin-left: 10px !important;
+}
+
+.rmdp-ep-arrow[direction="top"] {
+  border-bottom: 0px !important;
+}
+
+.rmdp-shadow {
+  box-shadow: 0px 0px 0px !important;
+}
+
+.rmdp-day:not(.rmdp-disabled):not(.rmdp-day-hidden) span:hover {
+  background-color: #ffa65e !important;
+}
+
 @-webkit-keyframes spinner {
   0% {
     -webkit-transform: rotate(0deg);
