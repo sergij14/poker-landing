@@ -154,7 +154,7 @@ const Register = () => {
                 {basicFields.map(({ name, type, label }) => (
                   <div className="relative col-span-1" key={name}>
                     <input
-                      className="land-input group login-input w-full h-14 border border-secondary-light focus:outline-none focus:ring-2 ring-white ring-opacity-20 inline-block relative bg-transparent text-base z-20"
+                      className="land-input group login-input w-full h-14 border border-landing-primaryBorder focus:outline-none focus:ring-2 ring-white ring-opacity-20 inline-block relative bg-transparent text-base z-20"
                       type={type}
                       {...register(name)}
                       placeholder={label}

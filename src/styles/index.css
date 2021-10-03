@@ -28,7 +28,7 @@
 }
 
 .toast {
-  @apply bg-primary-default text-base font-bold text-white;
+  @apply bg-landing-orange text-base font-bold text-white !important;
 }
 
 body {
