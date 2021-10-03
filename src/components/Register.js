@@ -2,13 +2,14 @@ import React, { useState } from "react";
 
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useText } from "../Context";
-import Loader from "../Loader";
+import { useText } from "../context";
+import { EyedPasswordInput } from "../hocs/EyedPasswordInput";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
 import { createCustomerDoc } from "../firebase";
 import i18n from "../i18n";
+import Loader from "./Loader";
 
 const Register = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -128,15 +129,17 @@ const Register = () => {
       className="bg-cover pt-18 pb-24"
       style={{ backgroundImage: "url(/images/landing/bg-deals.svg)" }}
     >
-      <div className="mx-auto max-w-7xl px-4 mt-28">
+      <div className="mx-auto max-w-7xl sm:px-4 mt-28">
         <div className="flex flex-col space-y-7 lg:flex-row lg:space-x-8 lg:items-center">
-          <div className="lg:w-2/5">
+          <div className="lg:w-2/5 px-4">
             <h4 className="text-2xl font-bold my-4">
               {t("landing.register.title")}
             </h4>
             <p className="text-lg">{t("landing.register.msg")}</p>
           </div>
-          <div className={`bg-landing-bgSecondary rounded-lg p-10 lg:w-3/5`}>
+          <div
+            className={`bg-landing-bgSecondary sm:rounded-lg px-6 py-8 md:p-10 lg:w-3/5`}
+          >
             <h5 className="text-2xl font-bold">
               {registered
                 ? t("landing.register.title-form-registered")
@@ -150,16 +153,24 @@ const Register = () => {
                   : ""
               }`}
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
                 {basicFields.map(({ name, type, label }) => (
                   <div className="relative col-span-1" key={name}>
-                    <input
-                      className="land-input group login-input w-full h-14 border border-landing-primaryBorder focus:outline-none focus:ring-2 ring-white ring-opacity-20 inline-block relative bg-transparent text-base z-20"
-                      type={type}
-                      {...register(name)}
-                      placeholder={label}
-                      autoComplete="new-password"
-                    />
+                    {name === "password" || name === "confirm_password" ? (
+                      <EyedPasswordInput
+                        label={label}
+                        register={register}
+                        name={name}
+                      />
+                    ) : (
+                      <input
+                        className="login-input"
+                        type={type}
+                        {...register(name)}
+                        placeholder={label}
+                        autoComplete="new-password"
+                      />
+                    )}
 
                     <p className="pt-3 text-yellow-500">
                       {errors[name] && errors[name].message}

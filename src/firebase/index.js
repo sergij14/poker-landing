@@ -15,20 +15,14 @@ if (!firebase.apps.length) firebase.initializeApp(config);
 export const firestore = firebase.firestore();
 
 export const createCustomerDoc = async (data, errTxt) => {
-  const customerRef = firestore.doc(`customers/${data.email.toLowerCase()}`);
+  const { email } = data;
+  const customerRef = firestore.doc(`customers/${email.toLowerCase()}`);
   const snapShot = await customerRef.get();
 
   if (!snapShot.exists) {
-    const { first_name, last_name, email, username } = data;
-    const createdAt = new Date();
+    const created_at = new Date();
     try {
-      await customerRef.set({
-        "First Name": first_name,
-        "Last Name": last_name,
-        Username: username,
-        Email: email,
-        "Created At": createdAt,
-      });
+      await customerRef.set({ ...data, created_at });
     } catch (err) {
       console.log(err);
     }

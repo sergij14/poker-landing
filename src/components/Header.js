@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { useSwipeable } from "react-swipeable";
-import { useLang, useText } from "../Context";
+import { useLang, useText } from "../context";
 
 const Header = () => {
   const [index, setIndex] = useState(0);
@@ -12,24 +12,24 @@ const Header = () => {
   const history = useHistory();
   const images = [
     {
-	  id: 1,
-    url: "/images/landing/bg.jpg",
-	  bonus: '500%',
-	  bonusText: t('landing.header.h-1.text-1'),
-	  baseText: t('landing.header.h-1.text-2')
+      id: 1,
+      url: "/images/landing/bg.jpg",
+      bonus: "500%",
+      bonusText: t("landing.header.h-1.text-1"),
+      baseText: t("landing.header.h-1.text-2"),
     },
     {
-	  id: 2,
-	  url: "/images/landing/bg-02.png",
-	  smallText: t('landing.header.h-2.text-1'),
-	  bigText: t('landing.header.h-2.text-2')
+      id: 2,
+      url: "/images/landing/bg-02.png",
+      smallText: t("landing.header.h-2.text-1"),
+      bigText: t("landing.header.h-2.text-2"),
     },
-	{
-		id:3,
-		url: "/images/landing/bg-03.png",
-		smallText: t('landing.header.h-3.text-1'),
-		bigText: t('landing.header.h-3.text-2')
-	  },
+    {
+      id: 3,
+      url: "/images/landing/bg-03.png",
+      smallText: t("landing.header.h-3.text-1"),
+      bigText: t("landing.header.h-3.text-2"),
+    },
   ];
   const delay = 4500;
   const resetTimeout = () => {
@@ -39,8 +39,12 @@ const Header = () => {
   };
 
   const swipeHandlers = useSwipeable({
-    onSwipedLeft: () => setIndex((prevIndex) => prevIndex === images.length - 1 ? 0 : prevIndex + 1),
-    onSwipedRight: () => index !== 0 ? setIndex(index - 1) : setIndex(images.length - 1)
+    onSwipedLeft: () =>
+      setIndex((prevIndex) =>
+        prevIndex === images.length - 1 ? 0 : prevIndex + 1
+      ),
+    onSwipedRight: () =>
+      index !== 0 ? setIndex(index - 1) : setIndex(images.length - 1),
   });
 
   useEffect(() => {
@@ -61,21 +65,53 @@ const Header = () => {
 
   return (
     <div className="mx-auto overflow-hidden relative">
-            <div className="absolute z-50 top-0 left-0 w-full">
-              <div className="max-w-7xl mx-auto flex justify-between items-center mt-8 mb-28 px-4">
-              <div>
-              <Link to="/">
+      <div className="absolute z-50 top-0 left-0 w-full">
+        <div className="max-w-7xl mx-auto flex justify-between items-center mt-8 mb-28 px-4">
+          <div>
+            <Link to="/">
               <img src="/images/landing/logo.png" alt="" />
-              </Link>
-
-              </div>
-              <div className="flex space-x-3 bg-black bg-opacity-50 p-3 rounded-lg">
-                <button onClick={() => history.push('/ge')} className={`${lang !== 'ge' ? 'opacity-30' : "opacity-80"} focus:outline-none cursor-pointer hover:opacity-100`}><img alt="" src="/images/landing/georgia.svg" className="w-6 h-6" /></button>
-                <button onClick={() => history.push('/')}  className={`${lang !== 'en' ? 'opacity-30' : "opacity-80"} focus:outline-none cursor-pointer hover:opacity-100`}><img alt="" src="/images/landing/united-kingdom.svg" className="w-6 h-6" /></button>
-                <button onClick={() => history.push('/ru')}  className={`${lang !== 'ru' ? 'opacity-30' : "opacity-80"} focus:outline-none cursor-pointer hover:opacity-100`}><img alt="" src="/images/landing/russia.svg" className="w-6 h-6" /></button>
-              </div>
-              </div>
-          	</div>
+            </Link>
+          </div>
+          <div className="flex space-x-3 bg-black bg-opacity-50 p-3 rounded-lg">
+            <button
+              onClick={() => history.push("/ge")}
+              className={`${
+                lang !== "ge" ? "opacity-30" : "opacity-80"
+              } focus:outline-none cursor-pointer hover:opacity-100`}
+            >
+              <img
+                alt=""
+                src="/images/landing/georgia.svg"
+                className="w-6 h-6"
+              />
+            </button>
+            <button
+              onClick={() => history.push("/")}
+              className={`${
+                lang !== "en" ? "opacity-30" : "opacity-80"
+              } focus:outline-none cursor-pointer hover:opacity-100`}
+            >
+              <img
+                alt=""
+                src="/images/landing/united-kingdom.svg"
+                className="w-6 h-6"
+              />
+            </button>
+            <button
+              onClick={() => history.push("/ru")}
+              className={`${
+                lang !== "ru" ? "opacity-30" : "opacity-80"
+              } focus:outline-none cursor-pointer hover:opacity-100`}
+            >
+              <img
+                alt=""
+                src="/images/landing/russia.svg"
+                className="w-6 h-6"
+              />
+            </button>
+          </div>
+        </div>
+      </div>
       <div
         {...swipeHandlers}
         className="whitespace-nowrap transition-all duration-300 ease-linear"
@@ -91,46 +127,66 @@ const Header = () => {
               alt=""
               className="object-cover absolute top-0 left-0 w-full h-full filter brightness-75"
             />
-			    <div className="absolute w-full z-10">
-				  	<div className="max-w-7xl mx-auto whitespace-normal px-4">
-
-            <div className="max-w-lg mt-44">
-            {img.id === 1 && 
-							<div>
-
-								<h4 className="text-4xl md:text-5xl font-bold uppercase mt-3"><span className="leading-snug" dangerouslySetInnerHTML={ {__html: img.baseText}} /></h4>
-							</div>
-							}
-							{img.id === 2 && 
-							<div>
-								<span className="text-3xl md:text-4xl font-semibold uppercase">{img.smallText}</span>
-								<h4 className="text-4xl md:text-5xl font-bold uppercase mt-3"><span className="leading-snug" dangerouslySetInnerHTML={ {__html: img.bigText}} /></h4>
-							</div>
-							}
-							{img.id === 3 && 
-							<div>
-								<h4 className="text-4xl font-bold uppercase mt-3"><span className="leading-snug" dangerouslySetInnerHTML={ {__html: img.bigText}} /></h4>
-							</div>
-							}
+            <div className="absolute w-full z-10">
+              <div className="max-w-7xl mx-auto whitespace-normal px-4">
+                <div className="max-w-lg mt-44">
+                  {img.id === 1 && (
+                    <div>
+                      <h4 className="text-4xl md:text-5xl font-bold uppercase mt-3">
+                        <span
+                          className="leading-snug"
+                          dangerouslySetInnerHTML={{ __html: img.baseText }}
+                        />
+                      </h4>
+                    </div>
+                  )}
+                  {img.id === 2 && (
+                    <div>
+                      <span className="text-3xl md:text-4xl font-semibold uppercase">
+                        {img.smallText}
+                      </span>
+                      <h4 className="text-4xl md:text-5xl font-bold uppercase mt-3">
+                        <span
+                          className="leading-snug"
+                          dangerouslySetInnerHTML={{ __html: img.bigText }}
+                        />
+                      </h4>
+                    </div>
+                  )}
+                  {img.id === 3 && (
+                    <div>
+                      <h4 className="text-4xl font-bold uppercase mt-3">
+                        <span
+                          className="leading-snug"
+                          dangerouslySetInnerHTML={{ __html: img.bigText }}
+                        />
+                      </h4>
+                    </div>
+                  )}
+                </div>
+                <button
+                  onClick={() => history.push("/")}
+                  className="px-6 rounded-lg py-4 bg-landing-orange hover:bg-landing-orangeLight mt-5 uppercase font-semibold focus:outline-none focus:ring-2 ring-white ring-opacity-20"
+                >
+                  {t("landing.header.play-txt")}
+                </button>
+              </div>
             </div>
-						<button onClick={() => history.push('/')} className="px-6 rounded-lg py-4 bg-landing-orange hover:bg-landing-orangeLight mt-5 uppercase font-semibold focus:outline-none focus:ring-2 ring-white ring-opacity-20">{t('landing.header.play-txt')}</button>
-					</div>
-				</div>
           </div>
         ))}
       </div>
       <div className="absolute bottom-0 z-20 w-full">
-		  <div className="mx-auto max-w-7xl flex space-x-4 px-4">
-			{images.map((_, idx) => (
-			<div
-				onClick={() => setIndex(idx)}
-				key={idx}
-				className={`inline-block h-2 w-8 rounded-lg cursor-pointer mb-8 lg:mb-20 bg-white bg-opacity-40 ${
-				index === idx && "bg-white bg-opacity-100"
-				}`}
-			></div>
-			))}
-		  </div>
+        <div className="mx-auto max-w-7xl flex space-x-4 px-4">
+          {images.map((_, idx) => (
+            <div
+              onClick={() => setIndex(idx)}
+              key={idx}
+              className={`inline-block h-2 w-8 rounded-lg cursor-pointer mb-8 lg:mb-20 bg-white bg-opacity-40 ${
+                index === idx && "bg-white bg-opacity-100"
+              }`}
+            ></div>
+          ))}
+        </div>
       </div>
     </div>
   );
