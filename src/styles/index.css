@@ -45,81 +45,122 @@ body {
   animation: spinner 1.5s linear infinite;
 }
 
-.rmdp-week-day {
-  color: #f6740e !important;
+/* /////////////////////////////////////////////////////////
+///////  DATEPICKER STYLES
+///////////////////////////////////////////////////////// */
+
+.rmdp-wrapper {
+  @apply bg-landing-primaryLight rounded-lg p-2 border border-landing-primaryBorder !important;
 }
 
-.rdmp-shadow {
-  display: none !important;
+.ep-arrow,
+.rmdp-ep-arrow,
+.rmdp-ep-shadow {
+  @apply hidden !important;
 }
 
-.rmdp-arrow-container:hover {
-  background-color: #ffba82 !important;
-}
-
-.rmdp-arrow {
-  border: solid #b5570d !important;
-  border-width: 0 2px 2px 0 !important;
-}
-
-.rmdp-day.rmdp-today span {
-  background-color: #fb882d !important;
-}
-
-.rmdp-day.rmdp-selected span:not(.highlight) {
-  background-color: #e17724 !important;
-}
-
-.rmdp-header-values {
-  color: #331b08 !important;
-  position: relative !important;
-}
-
-.rmdp-header-values:after {
-  content: "";
-  position: absolute;
-  right: -16px;
-  top: 17px;
-  width: 0;
-  height: 0;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  border-top: 5px solid black;
-  clear: both;
-}
-
-.rmdp-header-values:before {
-  content: "";
-  position: absolute;
-  left: -14px;
-  top: 17px;
-  width: 0;
-  height: 0;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  border-top: 5px solid black;
-  clear: both;
-}
-
-.rmdp-header-values span {
-  border-bottom: 1px solid black !important;
-}
-
-.rmdp-header-values span:nth-child(2) {
-  margin-left: 10px !important;
-}
-
-.rmdp-ep-arrow[direction="top"] {
-  border-bottom: 0px !important;
+.rmdp-month-picker,
+.rmdp-year-picker {
+  @apply bg-landing-primaryLight top-2 p-0 rounded-lg !important;
 }
 
 .rmdp-shadow {
   box-shadow: 0px 0px 0px !important;
 }
 
-.rmdp-day:not(.rmdp-disabled):not(.rmdp-day-hidden) span:hover {
-  background-color: #ffa65e !important;
+.rmdp-arrow {
+  border: solid white !important;
+  border-width: 0 4px 4px 0 !important;
+  margin: 0 !important;
 }
+
+.rmdp-arrow-container {
+  @apply w-auto h-auto p-3 rounded-3xl bg-landing-bgTertiary !important;
+}
+
+.rmdp-arrow-container:hover {
+  @apply bg-landing-bgSecondary !important;
+  box-shadow: 0px 0px 0px !important;
+}
+
+.rmdp-header-values {
+  @apply text-white font-bold relative !important;
+}
+
+.rmdp-week-day {
+  @apply text-gray-300 !important;
+}
+
+.rmdp-header-values:after {
+  content: "";
+  position: absolute;
+  right: -14px;
+  top: 17px;
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid white;
+  clear: both;
+}
+
+.rmdp-header-values:before {
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: 17px;
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid white;
+  clear: both;
+}
+
+.rmdp-day {
+  @apply text-white !important;
+}
+
+.rmdp-day.rmdp-today span {
+  @apply bg-landing-primaryBorder !important;
+}
+
+.rmdp-day.rmdp-selected span:not(.highlight) {
+  @apply bg-landing-orange !important;
+  box-shadow: 0px 0px 0px !important;
+}
+
+.rmdp-day:not(.rmdp-disabled):not(.rmdp-day-hidden) span:hover {
+  @apply bg-landing-orangeLight !important;
+}
+
+.rmdp-month-picker .rmdp-day:not(.rmdp-disabled):not(.rmdp-day-hidden) span,
+.rmdp-year-picker .rmdp-day:not(.rmdp-disabled):not(.rmdp-day-hidden) span {
+  @apply rounded-none !important;
+}
+
+.rmdp-month-picker
+  .rmdp-day:not(.rmdp-disabled):not(.rmdp-day-hidden)
+  span:hover,
+.rmdp-year-picker
+  .rmdp-day:not(.rmdp-disabled):not(.rmdp-day-hidden)
+  span:hover {
+  @apply bg-transparent border-b border-gray-500 !important;
+}
+
+.rmdp-month-picker .rmdp-day.rmdp-selected span:not(.highlight),
+.rmdp-year-picker .rmdp-day.rmdp-selected span:not(.highlight) {
+  @apply bg-transparent border-b border-landing-orange !important;
+}
+
+.rmdp-month-picker .rmdp-day.rmdp-today span,
+.rmdp-year-picker .rmdp-day.rmdp-today span {
+  @apply bg-transparent border-b border-landing-primaryBorder !important;
+}
+
+/* /////////////////////////////////////////////////////////
+///////  LOADING ANIMATION
+///////////////////////////////////////////////////////// */
 
 @-webkit-keyframes spinner {
   0% {
