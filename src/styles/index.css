@@ -95,7 +95,7 @@ body {
   content: "";
   position: absolute;
   right: -14px;
-  top: 17px;
+  top: 14px;
   width: 0;
   height: 0;
   border-left: 4px solid transparent;
@@ -108,7 +108,7 @@ body {
   content: "";
   position: absolute;
   left: -10px;
-  top: 17px;
+  top: 14px;
   width: 0;
   height: 0;
   border-left: 4px solid transparent;
