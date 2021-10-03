@@ -1,5 +1,5 @@
 import DatePicker from "react-multi-date-picker";
-import { ReactComponent as CalendarIcon } from "../assets/icons/calendar.svg";
+import { ReactComponent as CalendarIcon } from "../../assets/icons/calendar.svg";
 
 export const ControlledDateicker = ({
   name,
@@ -46,7 +46,7 @@ export const ControlledDateicker = ({
       }) => (
         <>
           <DatePicker
-            onChange={(date) => onChange(date?.isValid ? date : "")}
+            onChange={(date) => onChange(date?.isValid ? date : new Date())}
             format={format}
             render={<CustomDateInput onBlur={onBlur} />}
             containerClassName="w-full"

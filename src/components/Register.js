@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useText } from "../context";
-import { EyedPasswordInput } from "../hocs/EyedPasswordInput";
+
 import { Controller, useForm } from "react-hook-form";
 import { DateObject } from "react-multi-date-picker";
 
@@ -12,7 +12,8 @@ import * as Yup from "yup";
 import { createCustomerDoc } from "../firebase";
 import i18n from "../i18n";
 import Loader from "./Loader";
-import { ControlledDateicker } from "../hocs/ControlledDateicker";
+import { EyedPasswordInput } from "./hocs/EyedPasswordInput";
+import { ControlledDateicker } from "./hocs/ControlledDateicker";
 
 const Register = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);

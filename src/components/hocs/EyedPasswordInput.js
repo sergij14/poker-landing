@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ReactComponent as EyeIcon } from "../assets/icons/eye.svg";
+import { ReactComponent as EyeIcon } from "../../assets/icons/eye.svg";
 
 export const EyedPasswordInput = ({ name, register, label }) => {
   const [passwordType, setPasswordType] = useState("password");
