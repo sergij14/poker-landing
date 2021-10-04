@@ -33,7 +33,7 @@ export const ContextProvider = ({ children }) => {
     setContext((prev) => ({
       ...prev,
       lang: langId,
-      font: langId === "ge" ? "bodyGeo" : "body",
+      font: langId === "ge" ? "bpg_arial" : "inter",
     }));
   };
 

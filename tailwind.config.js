@@ -21,8 +21,8 @@ module.exports = {
         xl: "1340px",
       },
       fontFamily: {
-        body: ["Inter"],
-        bodyGeo: ["bpgarial"],
+        inter: ['"Inter"'],
+        bpg_arial: ['"bpgarial"'],
       },
     },
   },
