@@ -31,8 +31,8 @@
     -webkit-animation: spinner 1.5s linear infinite;
     animation: spinner 1.5s linear infinite;
   }
-  .w-70vw {
-    width: 70vw;
+  .w-60vw {
+    width: 60vw;
   }
   @variants responsive {
     .min-height-720 {
@@ -66,7 +66,7 @@ body {
 }
 
 .rmdp-calendar {
-  @apply w-70vw sm:w-50vw md:w-40vw lg:w-30vw xl:w-20vw !important;
+  @apply w-60vw sm:w-50vw md:w-40vw lg:w-30vw xl:w-20vw !important;
 }
 
 .rmdp-day-picker > div {
@@ -104,11 +104,11 @@ body {
 }
 
 .rmdp-header-values {
-  @apply text-white font-bold text-base relative !important;
+  @apply text-white font-bold text-sm sm:text-base relative !important;
 }
 
 .rmdp-week-day {
-  @apply text-gray-300 text-base !important;
+  @apply text-gray-300 text-sm sm:text-base !important;
 }
 
 .rmdp-header-values:after {
@@ -142,7 +142,7 @@ body {
 }
 
 .rmdp-day span {
-  @apply text-base !important;
+  @apply text-sm sm:text-base !important;
 }
 
 .rmdp-day.rmdp-today span {
