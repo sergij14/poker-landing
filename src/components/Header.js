@@ -179,7 +179,7 @@ const Header = () => {
             <div
               onClick={() => setIndex(idx)}
               key={idx}
-              className={`inline-block h-2 w-8 rounded-lg cursor-pointer mb-8 lg:mb-20 bg-white bg-opacity-40 ${
+              className={`inline-block h-4 w-8 rounded-lg cursor-pointer mb-8 lg:mb-20 bg-white bg-opacity-40 hover:bg-opacity-70 ${
                 index === idx && "bg-white bg-opacity-100"
               }`}
             ></div>

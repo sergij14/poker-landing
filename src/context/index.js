@@ -1,4 +1,4 @@
-import React, { useContext, useState, useRef } from "react";
+import React, { useContext, useState, useRef, useEffect } from "react";
 import i18next from "i18next";
 import { useTranslation } from "react-i18next";
 
@@ -33,15 +33,11 @@ export const ContextProvider = ({ children }) => {
     },
   };
 
-  const [context, setContext] = useState(initContext);
+  useEffect(() => {
+    initContext.setLangAndFont("en");
+  }, []); //eslint-disable-line
 
-  // useEffect(() => {
-  //   if (langId) {
-  //     setLangAndFont(langId);
-  //   } else {
-  //     setLangAndFont("en");
-  //   }
-  // }, [langId]);
+  const [context, setContext] = useState(initContext);
 
   return <AppContext.Provider value={context}>{children}</AppContext.Provider>;
 };
