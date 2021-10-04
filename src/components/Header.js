@@ -65,7 +65,7 @@ const Header = () => {
   return (
     <div className="mx-auto overflow-hidden relative">
       <div className="absolute z-50 top-0 left-0 w-full">
-        <div className="max-w-7xl mx-auto flex justify-between items-center mt-8 mb-28 px-4">
+        <div className="max-w-7xl mx-auto flex justify-between items-center mt-8 mb-10 px-4">
           <div>
             <Link to="/">
               <img src="/images/landing/logo.png" alt="" />

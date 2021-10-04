@@ -156,13 +156,13 @@ const Register = () => {
   return (
     <div
       ref={regSection.ref}
-      className="bg-cover pt-18 pb-24"
+      className="bg-cover py-8 sm:py-10 md:py-14"
       style={{ backgroundImage: "url(/images/landing/bg-deals.svg)" }}
     >
-      <div className="mx-auto max-w-7xl sm:px-4 mt-28">
+      <div className="mx-auto max-w-7xl sm:px-4">
         <div className="flex flex-col space-y-7 lg:flex-row lg:space-x-8 lg:items-center">
           <div className="lg:w-2/5 px-4">
-            <h4 className="text-3xl font-black my-4">
+            <h4 className="text-3xl font-black mb-4">
               {text("landing.register.title")}
             </h4>
             <p className="text-lg">{text("landing.register.msg")}</p>

@@ -9,7 +9,7 @@ const Footer = () => {
   return (
     <div className="bg-landing-bgSecondary">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="flex flex-col lg:flex-row py-16 lg:items-center lg:justify-between">
+        <div className="flex flex-col lg:flex-row py-6 sm:py-8 md:py-12 lg:py-14 lg:items-center lg:justify-between">
           <div className="flex flex-col order-3">
             <div className="flex space-x-4">
               <a
