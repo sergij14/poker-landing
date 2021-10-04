@@ -31,9 +31,24 @@
     -webkit-animation: spinner 1.5s linear infinite;
     animation: spinner 1.5s linear infinite;
   }
+  .w-70vw {
+    width: 70vw;
+  }
   @variants responsive {
     .min-height-720 {
       min-height: 720px;
+    }
+    .w-50vw {
+      width: 50vw;
+    }
+    .w-40vw {
+      width: 40vw;
+    }
+    .w-30vw {
+      width: 30vw;
+    }
+    .w-20vw {
+      width: 20vw;
     }
   }
 }
@@ -47,7 +62,15 @@ body {
 ///////////////////////////////////////////////////////// */
 
 .rmdp-wrapper {
-  @apply bg-landing-primaryLight rounded-lg p-2 border border-landing-primaryBorder !important;
+  @apply bg-landing-primaryLight rounded-lg p-2 border border-landing-primaryBorder w-auto max-w-md !important;
+}
+
+.rmdp-calendar {
+  @apply w-70vw sm:w-50vw md:w-40vw lg:w-30vw xl:w-20vw !important;
+}
+
+.rmdp-day-picker > div {
+  width: 100% !important;
 }
 
 .ep-arrow,
@@ -81,18 +104,18 @@ body {
 }
 
 .rmdp-header-values {
-  @apply text-white font-bold relative !important;
+  @apply text-white font-bold text-base relative !important;
 }
 
 .rmdp-week-day {
-  @apply text-gray-300 !important;
+  @apply text-gray-300 text-base !important;
 }
 
 .rmdp-header-values:after {
   content: "";
   position: absolute;
   right: -14px;
-  top: 14px;
+  top: 8px;
   width: 0;
   height: 0;
   border-left: 4px solid transparent;
@@ -105,7 +128,7 @@ body {
   content: "";
   position: absolute;
   left: -10px;
-  top: 14px;
+  top: 8px;
   width: 0;
   height: 0;
   border-left: 4px solid transparent;
@@ -116,6 +139,10 @@ body {
 
 .rmdp-day {
   @apply text-white !important;
+}
+
+.rmdp-day span {
+  @apply text-base !important;
 }
 
 .rmdp-day.rmdp-today span {
