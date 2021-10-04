@@ -11,7 +11,7 @@ export const useAppContext = () => {
 
 export const ContextProvider = ({ children }) => {
   const { t } = useTranslation();
-  const { id } = useParams();
+  const { langId } = useParams();
   const regSectionRef = useRef();
 
   const initContext = {
@@ -29,22 +29,20 @@ export const ContextProvider = ({ children }) => {
   const [context, setContext] = useState(initContext);
 
   useEffect(() => {
-    if (id) {
-      i18next.changeLanguage(id);
-      setContext((prev) => ({ ...prev, lang: id }));
+    if (langId) {
+      i18next.changeLanguage(langId);
+      setContext((prev) => ({ ...prev, lang: langId }));
     } else {
       i18next.changeLanguage("en");
       setContext((prev) => ({ ...prev, lang: "en" }));
     }
-  }, [id]);
 
-  useEffect(() => {
-    if (context.lang === "ge") {
+    if (langId === "ge") {
       setContext((prev) => ({ ...prev, font: "bodyGeo" }));
     } else {
       setContext((prev) => ({ ...prev, font: "body" }));
     }
-  }, [context.lang]);
+  }, [langId]);
 
   return <AppContext.Provider value={context}>{children}</AppContext.Provider>;
 };

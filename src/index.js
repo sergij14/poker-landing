@@ -16,7 +16,7 @@ const RootApp = (
     >
       <Switch>
         <Route exact path="/" component={App} />
-        <Route exact path="/:id" component={App} />
+        <Route exact path="/:langId" component={App} />
       </Switch>
     </Suspense>
   </BrowserRouter>
