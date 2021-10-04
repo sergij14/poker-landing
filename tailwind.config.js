@@ -20,10 +20,6 @@ module.exports = {
         lg: "976px",
         xl: "1340px",
       },
-      fontFamily: {
-        inter: ['"Inter"'],
-        bpg_arial: ['"bpgarial"'],
-      },
     },
   },
   variants: {

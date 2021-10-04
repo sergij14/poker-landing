@@ -4,27 +4,29 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  @font-face {
-    font-family: "bpgarial";
-    font-weight: normal;
-    src: url("../assets/fonts/bpg_arial_2009.ttf") format("truetype");
-  }
+@font-face {
+  font-family: "bpgarial";
+  src: local("bpgarial"),
+    url("../assets/fonts/bpg_arial_2009.ttf") format("truetype");
+  font-weight: normal;
 }
 
 @layer utilities {
-  .game-btn {
-    @apply transform hover:-translate-y-2 transition-all duration-200 ease-linear;
+  .fontF-bpg_arial {
+    font-family: "bpgarial";
+  }
+  .fontF-inter {
+    font-family: "Inter";
   }
   .login-input {
     @apply block py-2 px-4 rounded-lg  w-full h-14 border border-landing-primaryBorder focus:outline-none focus:ring-2 ring-white ring-opacity-20 relative bg-transparent text-base z-20;
   }
+  .min-height-680 {
+    min-height: 680px;
+  }
   @variants responsive {
     .min-height-720 {
       min-height: 720px;
-    }
-    .min-height-920 {
-      min-height: 920px;
     }
   }
 }
@@ -35,10 +37,6 @@
 
 body {
   @apply bg-landing-bg;
-}
-
-.min-height-680 {
-  min-height: 680px;
 }
 
 .loader {
