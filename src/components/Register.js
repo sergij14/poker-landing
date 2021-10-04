@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -18,8 +18,8 @@ import { ControlledDateicker } from "./hocs/ControlledDateicker";
 const Register = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [registered, setRegistered] = useState(false);
-
-  const { text, regSection } = useAppContext();
+  const regBtnRef = useRef();
+  const { text, regSection, lang } = useAppContext();
 
   const DATE_FORMAT = "MM/DD/YYYY";
   const notify = (text) => toast(text);
@@ -97,6 +97,10 @@ const Register = () => {
     mode: "onChange",
     resolver: yupResolver(schema),
   });
+
+  useEffect(() => {
+    Object.keys(errors).length && regBtnRef.current?.click();
+  }, [lang]); //eslint-disable-line
 
   const onSubmit = async (data) => {
     setIsSubmitting(true);
@@ -215,6 +219,7 @@ const Register = () => {
 
               <button
                 type="submit"
+                ref={regBtnRef}
                 className="px-6 rounded-lg py-4 bg-landing-orange hover:bg-landing-orangeLight mt-8 uppercase font-bold focus:outline-none focus:ring-2 ring-white ring-opacity-20"
               >
                 {text("landing.register.btn")}
