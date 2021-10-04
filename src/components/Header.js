@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useSwipeable } from "react-swipeable";
 import { useAppContext } from "../context";
 
@@ -9,7 +9,6 @@ const Header = () => {
   // const [height, setHeight] = useState(null);
   const { text, lang, regSection } = useAppContext();
 
-  const history = useHistory();
   const images = [
     {
       id: 1,
@@ -73,8 +72,8 @@ const Header = () => {
             </Link>
           </div>
           <div className="flex space-x-3 bg-black bg-opacity-50 p-3 rounded-lg">
-            <button
-              onClick={() => history.push("/ge")}
+            <Link
+              to="/ge"
               className={`${
                 lang !== "ge" ? "opacity-30" : "opacity-80"
               } focus:outline-none cursor-pointer hover:opacity-100`}
@@ -84,9 +83,9 @@ const Header = () => {
                 src="/images/landing/georgia.svg"
                 className="w-6 h-6"
               />
-            </button>
-            <button
-              onClick={() => history.push("/")}
+            </Link>
+            <Link
+              to="/"
               className={`${
                 lang !== "en" ? "opacity-30" : "opacity-80"
               } focus:outline-none cursor-pointer hover:opacity-100`}
@@ -96,9 +95,9 @@ const Header = () => {
                 src="/images/landing/united-kingdom.svg"
                 className="w-6 h-6"
               />
-            </button>
-            <button
-              onClick={() => history.push("/ru")}
+            </Link>
+            <Link
+              to="/ru"
               className={`${
                 lang !== "ru" ? "opacity-30" : "opacity-80"
               } focus:outline-none cursor-pointer hover:opacity-100`}
@@ -108,7 +107,7 @@ const Header = () => {
                 src="/images/landing/russia.svg"
                 className="w-6 h-6"
               />
-            </button>
+            </Link>
           </div>
         </div>
       </div>

@@ -28,19 +28,20 @@ export const ContextProvider = ({ children }) => {
 
   const [context, setContext] = useState(initContext);
 
+  const setLangAndFont = async (langId) => {
+    await i18next.changeLanguage(langId);
+    setContext((prev) => ({
+      ...prev,
+      lang: langId,
+      font: langId === "ge" ? "bodyGeo" : "body",
+    }));
+  };
+
   useEffect(() => {
     if (langId) {
-      i18next.changeLanguage(langId);
-      setContext((prev) => ({ ...prev, lang: langId }));
+      setLangAndFont(langId);
     } else {
-      i18next.changeLanguage("en");
-      setContext((prev) => ({ ...prev, lang: "en" }));
-    }
-
-    if (langId === "ge") {
-      setContext((prev) => ({ ...prev, font: "bodyGeo" }));
-    } else {
-      setContext((prev) => ({ ...prev, font: "body" }));
+      setLangAndFont("en");
     }
   }, [langId]);
 
