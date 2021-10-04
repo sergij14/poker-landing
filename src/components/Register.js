@@ -110,7 +110,7 @@ const Register = () => {
     try {
       await createCustomerDoc(
         formData,
-        i18n.text("landing.register.inputs.errors.email")
+        i18n.t("landing.register.inputs.errors.email")
       );
       setRegistered(true);
       setIsSubmitting(false);
