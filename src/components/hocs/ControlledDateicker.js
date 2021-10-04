@@ -17,7 +17,7 @@ export const ControlledDateicker = ({
     <div className="relative">
       <input
         readOnly="readOnly"
-        className="login-input"
+        className="iconed-input"
         onFocus={openCalendar}
         value={value && `${value} - ${format}`}
         onBlur={onBlur}

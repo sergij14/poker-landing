@@ -14,7 +14,7 @@ export const EyedPasswordInput = ({ name, register, label }) => {
       <input
         placeholder={label}
         type={passwordType}
-        className="login-input"
+        className="iconed-input p-0"
         {...register(name)}
       />
       <div

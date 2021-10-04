@@ -194,7 +194,7 @@ const Register = () => {
                       />
                     ) : (
                       <input
-                        className="login-input"
+                        className="input"
                         type={type}
                         {...register(name)}
                         placeholder={label}
