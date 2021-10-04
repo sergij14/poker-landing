@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
 import { useSwipeable } from "react-swipeable";
 import { useAppContext } from "../context";
 
@@ -7,7 +6,7 @@ const Header = () => {
   const [index, setIndex] = useState(0);
   const timeoutRef = useRef(null);
   // const [height, setHeight] = useState(null);
-  const { text, lang, regSection } = useAppContext();
+  const { text, lang, regSection, setLangAndFont } = useAppContext();
 
   const images = [
     {
@@ -67,13 +66,13 @@ const Header = () => {
       <div className="absolute z-50 top-0 left-0 w-full">
         <div className="max-w-7xl mx-auto flex justify-between items-center mt-8 mb-10 px-4">
           <div>
-            <Link to="/">
+            <a href="/">
               <img src="/images/landing/logo.png" alt="" />
-            </Link>
+            </a>
           </div>
           <div className="flex space-x-3 bg-black bg-opacity-50 p-3 rounded-lg">
-            <Link
-              to="/ge"
+            <button
+              onClick={() => setLangAndFont("ge")}
               className={`${
                 lang !== "ge" ? "opacity-30" : "opacity-80"
               } focus:outline-none cursor-pointer hover:opacity-100`}
@@ -83,9 +82,9 @@ const Header = () => {
                 src="/images/landing/georgia.svg"
                 className="w-6 h-6"
               />
-            </Link>
-            <Link
-              to="/"
+            </button>
+            <button
+              onClick={() => setLangAndFont("en")}
               className={`${
                 lang !== "en" ? "opacity-30" : "opacity-80"
               } focus:outline-none cursor-pointer hover:opacity-100`}
@@ -95,9 +94,9 @@ const Header = () => {
                 src="/images/landing/united-kingdom.svg"
                 className="w-6 h-6"
               />
-            </Link>
-            <Link
-              to="/ru"
+            </button>
+            <button
+              onClick={() => setLangAndFont("ru")}
               className={`${
                 lang !== "ru" ? "opacity-30" : "opacity-80"
               } focus:outline-none cursor-pointer hover:opacity-100`}
@@ -107,7 +106,7 @@ const Header = () => {
                 src="/images/landing/russia.svg"
                 className="w-6 h-6"
               />
-            </Link>
+            </button>
           </div>
         </div>
       </div>

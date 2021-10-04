@@ -1,5 +1,4 @@
-import React, { useContext, useState, useEffect, useRef } from "react";
-import { useParams } from "react-router-dom";
+import React, { useContext, useState, useRef } from "react";
 import i18next from "i18next";
 import { useTranslation } from "react-i18next";
 
@@ -11,12 +10,12 @@ export const useAppContext = () => {
 
 export const ContextProvider = ({ children }) => {
   const { t } = useTranslation();
-  const { langId } = useParams();
+
   const regSectionRef = useRef();
 
   const initContext = {
-    lang: "",
-    font: null,
+    lang: "en",
+    font: "inter",
     text: t,
     regSection: {
       ref: regSectionRef,
@@ -24,26 +23,25 @@ export const ContextProvider = ({ children }) => {
         regSectionRef.current?.scrollIntoView({ behavior: "smooth" });
       },
     },
+    setLangAndFont: async (langId) => {
+      await i18next.changeLanguage(langId);
+      setContext((prev) => ({
+        ...prev,
+        lang: langId,
+        font: langId === "ge" ? "bpgarial" : "inter",
+      }));
+    },
   };
 
   const [context, setContext] = useState(initContext);
 
-  const setLangAndFont = async (langId) => {
-    await i18next.changeLanguage(langId);
-    setContext((prev) => ({
-      ...prev,
-      lang: langId,
-      font: langId === "ge" ? "bpgarial" : "inter",
-    }));
-  };
-
-  useEffect(() => {
-    if (langId) {
-      setLangAndFont(langId);
-    } else {
-      setLangAndFont("en");
-    }
-  }, [langId]);
+  // useEffect(() => {
+  //   if (langId) {
+  //     setLangAndFont(langId);
+  //   } else {
+  //     setLangAndFont("en");
+  //   }
+  // }, [langId]);
 
   return <AppContext.Provider value={context}>{children}</AppContext.Provider>;
 };
