@@ -152,7 +152,7 @@ const Register = () => {
       <div className="mx-auto max-w-7xl sm:px-4 mt-28">
         <div className="flex flex-col space-y-7 lg:flex-row lg:space-x-8 lg:items-center">
           <div className="lg:w-2/5 px-4">
-            <h4 className="text-2xl font-bold my-4">
+            <h4 className="text-3xl font-black my-4">
               {t("landing.register.title")}
             </h4>
             <p className="text-lg">{t("landing.register.msg")}</p>
@@ -160,7 +160,7 @@ const Register = () => {
           <div
             className={`bg-landing-bgSecondary sm:rounded-lg px-6 py-8 md:p-10 lg:w-3/5`}
           >
-            <h5 className="text-2xl font-bold">
+            <h5 className="text-3xl font-black">
               {registered
                 ? t("landing.register.title-form-registered")
                 : t("landing.register.title-form")}
@@ -209,7 +209,7 @@ const Register = () => {
 
               <button
                 type="submit"
-                className="px-6 rounded-lg py-4 bg-landing-orange hover:bg-landing-orangeLight mt-8 uppercase font-semibold focus:outline-none focus:ring-2 ring-white ring-opacity-20"
+                className="px-6 rounded-lg py-4 bg-landing-orange hover:bg-landing-orangeLight mt-8 uppercase font-bold focus:outline-none focus:ring-2 ring-white ring-opacity-20"
               >
                 {t("landing.register.btn")}
               </button>

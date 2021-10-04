@@ -132,7 +132,7 @@ const Header = () => {
                 <div className="max-w-lg mt-44">
                   {img.id === 1 && (
                     <div>
-                      <h4 className="text-4xl md:text-5xl font-bold uppercase mt-3">
+                      <h4 className="text-4xl md:text-5xl font-black uppercase mt-3">
                         <span
                           className="leading-snug"
                           dangerouslySetInnerHTML={{ __html: img.baseText }}
@@ -142,10 +142,10 @@ const Header = () => {
                   )}
                   {img.id === 2 && (
                     <div>
-                      <span className="text-3xl md:text-4xl font-semibold uppercase">
+                      <span className="text-3xl md:text-4xl font-black uppercase">
                         {img.smallText}
                       </span>
-                      <h4 className="text-4xl md:text-5xl font-bold uppercase mt-3">
+                      <h4 className="text-4xl md:text-5xl font-black uppercase mt-3">
                         <span
                           className="leading-snug"
                           dangerouslySetInnerHTML={{ __html: img.bigText }}
@@ -155,7 +155,7 @@ const Header = () => {
                   )}
                   {img.id === 3 && (
                     <div>
-                      <h4 className="text-4xl font-bold uppercase mt-3">
+                      <h4 className="text-4xl font-black uppercase mt-3">
                         <span
                           className="leading-snug"
                           dangerouslySetInnerHTML={{ __html: img.bigText }}
@@ -166,7 +166,7 @@ const Header = () => {
                 </div>
                 <button
                   onClick={() => history.push("/")}
-                  className="px-6 rounded-lg py-4 bg-landing-orange hover:bg-landing-orangeLight mt-5 uppercase font-semibold focus:outline-none focus:ring-2 ring-white ring-opacity-20"
+                  className="px-6 rounded-lg py-4 text-xl bg-landing-orange hover:bg-landing-orangeLight mt-5 uppercase font-bold focus:outline-none focus:ring-2 ring-white ring-opacity-20"
                 >
                   {t("landing.header.play-txt")}
                 </button>

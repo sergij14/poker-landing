@@ -23,7 +23,7 @@ const About = () => {
   return (
     <div className="bg-landing-bgTertiary py-20">
       <div className="mx-auto max-w-7xl px-4">
-        <h4 className="text-center text-3xl font-bold mb-10">
+        <h4 className="text-center text-3xl font-black mb-10">
           {t("landing.about.title")}
         </h4>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">

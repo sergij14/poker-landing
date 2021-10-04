@@ -33,7 +33,7 @@ const Deals = () => {
       style={{ backgroundImage: "url(/images/landing/bg-deals.svg)" }}
     >
       <div className="mx-auto max-w-7xl px-4">
-        <h4 className="text-center text-3xl font-bold my-16">
+        <h4 className="text-center text-3xl font-black my-16">
           {t("landing.deals.title")}
         </h4>
         <div className="grid lg:grid-cols-2 gap-8">
@@ -60,7 +60,7 @@ const Deals = () => {
         <div className="text-center py-14 pb-24">
           <button
             onClick={() => history.push("/")}
-            className="px-6 rounded-lg py-4 bg-landing-orange hover:bg-landing-orangeLight mt-5 uppercase font-semibold focus:outline-none focus:ring-2 ring-white ring-opacity-20"
+            className="px-6 rounded-lg py-4 bg-landing-orange hover:bg-landing-orangeLight mt-5 uppercase font-bold focus:outline-none focus:ring-2 ring-white ring-opacity-20"
           >
             {t("landing.deals.get-text")}
           </button>

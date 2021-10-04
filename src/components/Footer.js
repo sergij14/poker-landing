@@ -33,10 +33,10 @@ const Footer = () => {
             </div>
           </div>
           <div className="flex flex-col space-y-4 sm:space-y-0 sm:flex-row sm:space-x-4 order-2 mb-6 lg:mb-0 lg:order-4">
-            <button className="rounded-lg py-3 px-6 uppercase bg-landing-primaryLight hover:bg-opacity-80 focus:outline-none focus:ring-2 ring-white ring-opacity-20">
+            <button className="rounded-lg py-3 px-6 font-semibold uppercase bg-landing-primaryLight hover:bg-opacity-80 focus:outline-none focus:ring-2 ring-white ring-opacity-20">
               {t("landing.footer.terms")}
             </button>
-            <button className="rounded-lg py-3 px-6 uppercase bg-landing-primaryLight hover:bg-opacity-80 focus:outline-none focus:ring-2 ring-white ring-opacity-20">
+            <button className="rounded-lg py-3 px-6 font-semibold uppercase bg-landing-primaryLight hover:bg-opacity-80 focus:outline-none focus:ring-2 ring-white ring-opacity-20">
               {t("landing.footer.privacy")}
             </button>
           </div>
