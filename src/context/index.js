@@ -1,4 +1,4 @@
-import React, { useContext, useState, useRef, useEffect } from "react";
+import React, { useContext, useState, useRef } from "react";
 import i18next from "i18next";
 import { useTranslation } from "react-i18next";
 
@@ -32,10 +32,6 @@ export const ContextProvider = ({ children }) => {
       }));
     },
   };
-
-  useEffect(() => {
-    initContext.setLangAndFont("en");
-  }, []); //eslint-disable-line
 
   const [context, setContext] = useState(initContext);
 
