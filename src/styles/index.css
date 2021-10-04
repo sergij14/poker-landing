@@ -12,12 +12,6 @@
 }
 
 @layer utilities {
-  .fontF-bpg_arial {
-    font-family: "bpgarial";
-  }
-  .fontF-inter {
-    font-family: "Inter";
-  }
   .login-input {
     @apply block py-2 px-4 rounded-lg  w-full h-14 border border-landing-primaryBorder focus:outline-none focus:ring-2 ring-white ring-opacity-20 relative bg-transparent text-base z-20;
   }
