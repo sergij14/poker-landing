@@ -39,10 +39,10 @@ const Deals = () => {
           {deals.map((deal) => (
             <div
               key={deal.title}
-              className="rounded-lg col-span-1 flex justify-between items-center p-10 bg-landing-bgSecondary bg-cover"
+              className="relative rounded-lg col-span-1 p-10 bg-landing-bgSecondary bg-cover"
               style={{ backgroundImage: "url(/images/landing/gradient.svg)" }}
             >
-              <div>
+              <div style={{ wordWrap: "break-word", maxWidth: "380px" }}>
                 <h3 className="text-white uppercase font-bold text-2xl my-3">
                   {deal.title}
                 </h3>
@@ -50,7 +50,7 @@ const Deals = () => {
                   {deal.text}
                 </p>
               </div>
-              <div className="flex justify-end">
+              <div className="absolute z-0 top-0 right-0 m-10 hidden sm:block">
                 <img src={deal.ico} alt="" />
               </div>
             </div>
