@@ -22,9 +22,9 @@ const About = () => {
     },
   ];
   return (
-    <div className="bg-landing-bgTertiary py-14 sm:py-16 md:py-16">
+    <div className="bg-landing-bgTertiary py-12 sm:py-14 md:py-16 lg:py-18">
       <div className="mx-auto max-w-7xl sm:px-4">
-        <h4 className="text-center text-3xl font-black mb-10">
+        <h4 className="text-center text-3xl font-black mb-8">
           {text("landing.about.title")}
         </h4>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">

@@ -28,11 +28,11 @@ const Deals = () => {
   ];
   return (
     <div
-      className="bg-cover"
+      className="bg-cover py-12 sm:py-14 md:py-16 lg:py-18"
       style={{ backgroundImage: "url(/images/landing/bg-deals.svg)" }}
     >
       <div className="mx-auto max-w-7xl sm:px-4">
-        <h4 className="text-center text-3xl font-black py-12 sm:py-14 md:py-16 lg:py-18">
+        <h4 className="text-center text-3xl font-black mb-8">
           {text("landing.deals.title")}
         </h4>
         <div className="grid lg:grid-cols-2 gap-8">
@@ -56,7 +56,7 @@ const Deals = () => {
             </div>
           ))}
         </div>
-        <div className="text-center py-6 sm:py-8 md:py-10 lg:py-12">
+        <div className="text-center mt-8">
           <button
             onClick={() => regSection.scroll()}
             className="px-6 rounded-lg py-4 bg-landing-orange hover:bg-landing-orangeLight mt-5 uppercase font-bold focus:outline-none focus:ring-2 ring-white ring-opacity-20"
