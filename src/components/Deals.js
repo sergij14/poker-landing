@@ -31,7 +31,7 @@ const Deals = () => {
       className="bg-cover"
       style={{ backgroundImage: "url(/images/landing/bg-deals.svg)" }}
     >
-      <div className="mx-auto max-w-7xl px-4">
+      <div className="mx-auto max-w-7xl sm:px-4">
         <h4 className="text-center text-3xl font-black my-16">
           {text("landing.deals.title")}
         </h4>
@@ -39,7 +39,7 @@ const Deals = () => {
           {deals.map((deal) => (
             <div
               key={deal.title}
-              className="relative rounded-lg col-span-1 p-10 bg-landing-bgSecondary bg-cover"
+              className="relative sm:rounded-lg col-span-1 p-6 sm:p-10 bg-landing-bgSecondary bg-cover"
               style={{ backgroundImage: "url(/images/landing/gradient.svg)" }}
             >
               <div style={{ wordWrap: "break-word", maxWidth: "380px" }}>

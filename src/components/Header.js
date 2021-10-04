@@ -124,7 +124,7 @@ const Header = () => {
             <img
               src={img.url}
               alt=""
-              className="object-cover absolute top-0 left-0 w-full h-full filter brightness-75"
+              className="object-cover absolute top-0 left-0 w-full h-full filter brightness-50 sm:brightness-75"
             />
             <div className="absolute w-full z-10">
               <div className="max-w-7xl mx-auto whitespace-normal px-4">

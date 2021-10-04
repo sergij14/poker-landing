@@ -23,7 +23,7 @@ const About = () => {
   ];
   return (
     <div className="bg-landing-bgTertiary py-20">
-      <div className="mx-auto max-w-7xl px-4">
+      <div className="mx-auto max-w-7xl sm:px-4">
         <h4 className="text-center text-3xl font-black mb-10">
           {text("landing.about.title")}
         </h4>
@@ -31,7 +31,7 @@ const About = () => {
           {info.map((info) => (
             <div
               key={info.title}
-              className="rounded-lg col-span-1 p-10 bg-landing-bgSecondary"
+              className="sm:rounded-lg col-span-1 p-6 sm:p-10 bg-landing-bgSecondary"
             >
               <div className="flex h-24 justify-center my-10">
                 <img src={info.ico} alt="" />

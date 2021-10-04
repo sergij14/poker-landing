@@ -8,7 +8,7 @@ const Footer = () => {
 
   return (
     <div className="bg-landing-bgSecondary">
-      <div className="mx-auto max-w-7xl px-4">
+      <div className="mx-auto max-w-7xl px-6">
         <div className="flex flex-col lg:flex-row py-16 lg:items-center lg:justify-between">
           <div className="flex flex-col order-3">
             <div className="flex space-x-4">
