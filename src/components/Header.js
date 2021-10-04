@@ -1,34 +1,34 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { useSwipeable } from "react-swipeable";
-import { useLang, useText } from "../context";
+import { useAppContext } from "../context";
 
 const Header = () => {
   const [index, setIndex] = useState(0);
   const timeoutRef = useRef(null);
   // const [height, setHeight] = useState(null);
-  const t = useText();
-  const lang = useLang();
+  const { text, lang } = useAppContext();
+
   const history = useHistory();
   const images = [
     {
       id: 1,
       url: "/images/landing/bg.jpg",
       bonus: "500%",
-      bonusText: t("landing.header.h-1.text-1"),
-      baseText: t("landing.header.h-1.text-2"),
+      bonusText: text("landing.header.h-1.text-1"),
+      baseText: text("landing.header.h-1.text-2"),
     },
     {
       id: 2,
       url: "/images/landing/bg-02.png",
-      smallText: t("landing.header.h-2.text-1"),
-      bigText: t("landing.header.h-2.text-2"),
+      smallText: text("landing.header.h-2.text-1"),
+      bigText: text("landing.header.h-2.text-2"),
     },
     {
       id: 3,
       url: "/images/landing/bg-03.png",
-      smallText: t("landing.header.h-3.text-1"),
-      bigText: t("landing.header.h-3.text-2"),
+      smallText: text("landing.header.h-3.text-1"),
+      bigText: text("landing.header.h-3.text-2"),
     },
   ];
   const delay = 4500;
@@ -168,7 +168,7 @@ const Header = () => {
                   onClick={() => history.push("/")}
                   className="px-6 rounded-lg py-4 text-xl bg-landing-orange hover:bg-landing-orangeLight mt-5 uppercase font-bold focus:outline-none focus:ring-2 ring-white ring-opacity-20"
                 >
-                  {t("landing.header.play-txt")}
+                  {text("landing.header.play-txt")}
                 </button>
               </div>
             </div>

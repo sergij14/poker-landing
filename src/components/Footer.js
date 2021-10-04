@@ -1,10 +1,11 @@
 import React from "react";
 import { ReactComponent as FBIcon } from "../assets/icons/facebook.svg";
 import { ReactComponent as INIcon } from "../assets/icons/instagram.svg";
-import { useText } from "../context";
+import { useAppContext } from "../context";
 
 const Footer = () => {
-  const t = useText();
+  const { text } = useAppContext();
+
   return (
     <div className="bg-landing-bgSecondary">
       <div className="mx-auto max-w-7xl px-4">
@@ -29,15 +30,15 @@ const Footer = () => {
               </a>
             </div>
             <div className="mt-6">
-              <p>© 2021, {t("landing.footer.copyright")}</p>
+              <p>© 2021, {text("landing.footer.copyright")}</p>
             </div>
           </div>
           <div className="flex flex-col space-y-4 sm:space-y-0 sm:flex-row sm:space-x-4 order-2 mb-6 lg:mb-0 lg:order-4">
             <button className="rounded-lg py-3 px-6 font-semibold uppercase bg-landing-primaryLight hover:bg-opacity-80 focus:outline-none focus:ring-2 ring-white ring-opacity-20">
-              {t("landing.footer.terms")}
+              {text("landing.footer.terms")}
             </button>
             <button className="rounded-lg py-3 px-6 font-semibold uppercase bg-landing-primaryLight hover:bg-opacity-80 focus:outline-none focus:ring-2 ring-white ring-opacity-20">
-              {t("landing.footer.privacy")}
+              {text("landing.footer.privacy")}
             </button>
           </div>
         </div>

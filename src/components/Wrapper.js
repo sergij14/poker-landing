@@ -1,8 +1,8 @@
 import React from "react";
-import { useFont } from "../context";
+import { useAppContext } from "../context";
 
 const Wrapper = ({ children }) => {
-  const font = useFont();
+  const { font } = useAppContext();
   return (
     <div className={`bg-landing-bg text-white font-${font}`}>{children}</div>
   );

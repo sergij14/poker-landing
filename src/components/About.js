@@ -1,22 +1,23 @@
 import React from "react";
-import { useText } from "../context";
+import { useAppContext } from "../context";
 
 const About = () => {
-  const t = useText();
+  const { text } = useAppContext();
+
   const info = [
     {
-      title: t("landing.about.inf-1-title"),
-      text: t("landing.about.inf-1"),
+      title: text("landing.about.inf-1-title"),
+      text: text("landing.about.inf-1"),
       ico: "/images/landing/ico-05.svg",
     },
     {
-      title: t("landing.about.inf-2-title"),
-      text: t("landing.about.inf-2"),
+      title: text("landing.about.inf-2-title"),
+      text: text("landing.about.inf-2"),
       ico: "/images/landing/ico-06.svg",
     },
     {
-      title: t("landing.about.inf-3-title"),
-      text: t("landing.about.inf-3"),
+      title: text("landing.about.inf-3-title"),
+      text: text("landing.about.inf-3"),
       ico: "/images/landing/ico-07.svg",
     },
   ];
@@ -24,7 +25,7 @@ const About = () => {
     <div className="bg-landing-bgTertiary py-20">
       <div className="mx-auto max-w-7xl px-4">
         <h4 className="text-center text-3xl font-black mb-10">
-          {t("landing.about.title")}
+          {text("landing.about.title")}
         </h4>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
           {info.map((info) => (
