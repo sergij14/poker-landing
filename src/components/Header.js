@@ -7,7 +7,7 @@ const Header = () => {
   const [index, setIndex] = useState(0);
   const timeoutRef = useRef(null);
   // const [height, setHeight] = useState(null);
-  const { text, lang } = useAppContext();
+  const { text, lang, regSection } = useAppContext();
 
   const history = useHistory();
   const images = [
@@ -165,7 +165,7 @@ const Header = () => {
                   )}
                 </div>
                 <button
-                  onClick={() => history.push("/")}
+                  onClick={() => regSection.scroll()}
                   className="px-6 rounded-lg py-4 text-xl bg-landing-orange hover:bg-landing-orangeLight mt-5 uppercase font-bold focus:outline-none focus:ring-2 ring-white ring-opacity-20"
                 >
                   {text("landing.header.play-txt")}

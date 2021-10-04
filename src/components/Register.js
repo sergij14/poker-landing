@@ -19,7 +19,7 @@ const Register = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [registered, setRegistered] = useState(false);
 
-  const { text } = useAppContext();
+  const { text, regSection } = useAppContext();
 
   const DATE_FORMAT = "MM/DD/YYYY";
   const notify = (text) => toast(text);
@@ -151,6 +151,7 @@ const Register = () => {
 
   return (
     <div
+      ref={regSection.ref}
       className="bg-cover pt-18 pb-24"
       style={{ backgroundImage: "url(/images/landing/bg-deals.svg)" }}
     >

@@ -1,10 +1,8 @@
 import React from "react";
-import { useHistory } from "react-router";
 import { useAppContext } from "../context";
 
 const Deals = () => {
-  const history = useHistory();
-  const { text } = useAppContext();
+  const { text, regSection } = useAppContext();
 
   const deals = [
     {
@@ -60,7 +58,7 @@ const Deals = () => {
         </div>
         <div className="text-center py-14 pb-24">
           <button
-            onClick={() => history.push("/")}
+            onClick={() => regSection.scroll()}
             className="px-6 rounded-lg py-4 bg-landing-orange hover:bg-landing-orangeLight mt-5 uppercase font-bold focus:outline-none focus:ring-2 ring-white ring-opacity-20"
           >
             {text("landing.deals.get-text")}

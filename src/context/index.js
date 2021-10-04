@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useState, useEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
 import i18next from "i18next";
 import { useTranslation } from "react-i18next";
@@ -12,11 +12,18 @@ export const useAppContext = () => {
 export const ContextProvider = ({ children }) => {
   const { t } = useTranslation();
   const { id } = useParams();
+  const regSectionRef = useRef();
 
   const initContext = {
     lang: "",
     font: null,
     text: t,
+    regSection: {
+      ref: regSectionRef,
+      scroll() {
+        regSectionRef.current?.scrollIntoView({ behavior: "smooth" });
+      },
+    },
   };
 
   const [context, setContext] = useState(initContext);
