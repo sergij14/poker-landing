@@ -1,14 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
-@font-face {
-  font-family: "bpgarial";
-  src: local("bpgarial"),
-    url("../assets/fonts/bpg_arial_2009.ttf") format("truetype");
-  font-weight: normal;
-}
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "bpgarial";
+    font-weight: normal;
+    src: url("../assets/fonts/bpg_arial_2009.ttf") format("truetype");
+  }
+}
 
 @layer utilities {
   .game-btn {
