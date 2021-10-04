@@ -10,7 +10,6 @@ import { DateObject } from "react-multi-date-picker";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
 import { createCustomerDoc } from "../firebase";
-import i18n from "../i18n";
 import Loader from "./Loader";
 import { EyedPasswordInput } from "./hocs/EyedPasswordInput";
 import { ControlledDateicker } from "./hocs/ControlledDateicker";
@@ -110,7 +109,7 @@ const Register = () => {
     try {
       await createCustomerDoc(
         formData,
-        i18n.t("landing.register.inputs.errors.email")
+        text("landing.register.inputs.errors.email")
       );
       setRegistered(true);
       setIsSubmitting(false);
