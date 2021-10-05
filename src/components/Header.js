@@ -75,6 +75,7 @@ const Header = () => {
           <div className="flex space-x-3 bg-black bg-opacity-50 p-3 rounded-lg">
             {languages.map((langId) => (
               <button
+                key={langId}
                 onClick={() => setLangAndFont(langId)}
                 className={`${
                   lang !== langId ? "opacity-30" : "opacity-80"
