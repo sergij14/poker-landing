@@ -12,9 +12,8 @@ const Header = () => {
     {
       id: 1,
       url: "/images/landing/bg.jpg",
-      bonus: "500%",
-      bonusText: text("landing.header.h-1.text-1"),
-      baseText: text("landing.header.h-1.text-2"),
+      smallText: text("landing.header.h-1.text-1"),
+      bigText: text("landing.header.h-1.text-2"),
     },
     {
       id: 2,
@@ -29,6 +28,9 @@ const Header = () => {
       bigText: text("landing.header.h-3.text-2"),
     },
   ];
+
+  const languages = ["ge", "en", "ru"];
+
   const delay = 4500;
   const resetTimeout = () => {
     if (timeoutRef.current) {
@@ -71,42 +73,20 @@ const Header = () => {
             </a>
           </div>
           <div className="flex space-x-3 bg-black bg-opacity-50 p-3 rounded-lg">
-            <button
-              onClick={() => setLangAndFont("ge")}
-              className={`${
-                lang !== "ge" ? "opacity-30" : "opacity-80"
-              } focus:outline-none cursor-pointer hover:opacity-100`}
-            >
-              <img
-                alt=""
-                src="/images/landing/georgia.svg"
-                className="w-6 h-6"
-              />
-            </button>
-            <button
-              onClick={() => setLangAndFont("en")}
-              className={`${
-                lang !== "en" ? "opacity-30" : "opacity-80"
-              } focus:outline-none cursor-pointer hover:opacity-100`}
-            >
-              <img
-                alt=""
-                src="/images/landing/united-kingdom.svg"
-                className="w-6 h-6"
-              />
-            </button>
-            <button
-              onClick={() => setLangAndFont("ru")}
-              className={`${
-                lang !== "ru" ? "opacity-30" : "opacity-80"
-              } focus:outline-none cursor-pointer hover:opacity-100`}
-            >
-              <img
-                alt=""
-                src="/images/landing/russia.svg"
-                className="w-6 h-6"
-              />
-            </button>
+            {languages.map((langId) => (
+              <button
+                onClick={() => setLangAndFont(langId)}
+                className={`${
+                  lang !== langId ? "opacity-30" : "opacity-80"
+                } focus:outline-none cursor-pointer hover:opacity-100`}
+              >
+                <img
+                  alt=""
+                  src={`/images/landing/${langId}.svg`}
+                  className="w-6 h-6"
+                />
+              </button>
+            ))}
           </div>
         </div>
       </div>
@@ -128,39 +108,17 @@ const Header = () => {
             <div className="absolute w-full z-10">
               <div className="max-w-7xl mx-auto whitespace-normal px-4">
                 <div className="max-w-lg mt-44">
-                  {img.id === 1 && (
-                    <div>
-                      <h4 className="text-4xl md:text-5xl font-black uppercase mt-3">
-                        <span
-                          className="leading-snug"
-                          dangerouslySetInnerHTML={{ __html: img.baseText }}
-                        />
-                      </h4>
-                    </div>
-                  )}
-                  {img.id === 2 && (
-                    <div>
-                      <span className="text-3xl md:text-4xl font-black uppercase">
-                        {img.smallText}
-                      </span>
-                      <h4 className="text-4xl md:text-5xl font-black uppercase mt-3">
-                        <span
-                          className="leading-snug"
-                          dangerouslySetInnerHTML={{ __html: img.bigText }}
-                        />
-                      </h4>
-                    </div>
-                  )}
-                  {img.id === 3 && (
-                    <div>
-                      <h4 className="text-4xl font-black uppercase mt-3">
-                        <span
-                          className="leading-snug"
-                          dangerouslySetInnerHTML={{ __html: img.bigText }}
-                        />
-                      </h4>
-                    </div>
-                  )}
+                  <div>
+                    <span className="text-3xl md:text-4xl font-black uppercase">
+                      {img.smallText}
+                    </span>
+                    <h4 className="text-4xl md:text-5xl font-black uppercase mt-3">
+                      <span
+                        className="leading-snug"
+                        dangerouslySetInnerHTML={{ __html: img.bigText }}
+                      />
+                    </h4>
+                  </div>
                 </div>
                 <button
                   onClick={() => regSection.scroll()}
