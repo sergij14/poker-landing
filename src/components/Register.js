@@ -3,7 +3,6 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useAppContext } from "../context";
 import { useForm } from "react-hook-form";
-import { DateObject } from "react-multi-date-picker";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
 import { createCustomerDoc } from "../firebase";
@@ -82,12 +81,10 @@ const Register = () => {
 
   const onSubmit = async (data) => {
     setIsSubmitting(true);
-    const formData = { ...data };
-    const dateObj = new DateObject(formData.birth_date);
-    formData.birth_date = dateObj.format(DATE_FORMAT);
+
     try {
       await createCustomerDoc(
-        formData,
+        data,
         text("landing.register.inputs.errors.email")
       );
       setRegistered(true);
