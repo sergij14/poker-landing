@@ -1,18 +1,14 @@
 import React, { useEffect, useRef, useState } from "react";
-
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useAppContext } from "../context";
-
-import { Controller, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { DateObject } from "react-multi-date-picker";
-
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
 import { createCustomerDoc } from "../firebase";
 import Loader from "./Loader";
 import { EyedPasswordInput } from "./hocs/EyedPasswordInput";
-import { ControlledDateicker } from "./hocs/ControlledDateicker";
 
 const Register = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -20,7 +16,6 @@ const Register = () => {
   const regBtnRef = useRef();
   const { text, regSection, lang } = useAppContext();
 
-  const DATE_FORMAT = "MM/DD/YYYY";
   const notify = (text) => toast(text);
 
   const schema = Yup.object().shape({
@@ -70,27 +65,11 @@ const Register = () => {
         [Yup.ref("password"), null],
         text("landing.register.inputs.errors.pass-match")
       ),
-    birth_date: Yup.date()
-      .required(
-        text(`landing.register.inputs.birth_date`) +
-          " " +
-          text("landing.register.inputs.errors.required")
-      )
-      .test(
-        "age",
-        text("landing.register.inputs.errors.minAge"),
-        (birthdate) => {
-          const cutoff = new Date();
-          cutoff.setFullYear(cutoff.getFullYear() - 18);
-          return birthdate <= cutoff;
-        }
-      ),
   });
 
   const {
     register,
     handleSubmit,
-    control,
     formState: { errors },
   } = useForm({
     mode: "onChange",
@@ -207,14 +186,6 @@ const Register = () => {
                   </div>
                 ))}
               </div>
-
-              <ControlledDateicker
-                control={control}
-                name="birth_date"
-                format={DATE_FORMAT}
-                label={text("landing.register.inputs.birth_date")}
-                Controller={Controller}
-              />
 
               <button
                 type="submit"
