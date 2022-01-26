@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useAppContext } from "../context";
@@ -12,8 +12,8 @@ import { EyedPasswordInput } from "./hocs/EyedPasswordInput";
 const Register = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [registered, setRegistered] = useState(false);
-  const regBtnRef = useRef();
-  const { text, regSection, lang } = useAppContext();
+
+  const { text } = useAppContext();
 
   const notify = (text) => toast(text);
 
@@ -75,10 +75,6 @@ const Register = () => {
     resolver: yupResolver(schema),
   });
 
-  useEffect(() => {
-    Object.keys(errors).length && regBtnRef.current?.click();
-  }, [lang]); //eslint-disable-line
-
   const onSubmit = async (data) => {
     setIsSubmitting(true);
 
@@ -130,7 +126,6 @@ const Register = () => {
 
   return (
     <div
-      ref={regSection.ref}
       className="bg-cover py-12 sm:py-14 md:py-16 lg:py-18"
       style={{ backgroundImage: "url(/images/landing/bg-deals.svg)" }}
     >
@@ -186,7 +181,6 @@ const Register = () => {
 
               <button
                 type="submit"
-                ref={regBtnRef}
                 className="px-6 rounded-lg py-4 bg-landing-orange hover:bg-landing-orangeLight mt-8 uppercase font-bold focus:outline-none focus:ring-2 ring-white ring-opacity-20"
               >
                 {text("landing.register.btn")}
