@@ -1,26 +1,6 @@
 import React from "react";
-import { useAppContext } from "../context";
 
-const About = () => {
-  const { text } = useAppContext();
-
-  const info = [
-    {
-      title: text("landing.about.inf-1-title"),
-      text: text("landing.about.inf-1"),
-      ico: "/images/landing/ico-05.svg",
-    },
-    {
-      title: text("landing.about.inf-2-title"),
-      text: text("landing.about.inf-2"),
-      ico: "/images/landing/ico-06.svg",
-    },
-    {
-      title: text("landing.about.inf-3-title"),
-      text: text("landing.about.inf-3"),
-      ico: "/images/landing/ico-07.svg",
-    },
-  ];
+const About = ({ text, info }) => {
   return (
     <div className="bg-landing-bgTertiary py-12 sm:py-14 md:py-16 lg:py-18">
       <div className="mx-auto max-w-7xl sm:px-4">
