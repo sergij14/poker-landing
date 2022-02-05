@@ -13,7 +13,7 @@ const RegisterContainer = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [registered, setRegistered] = useState(false);
 
-  const { text } = useAppContext();
+  const { text, regSection } = useAppContext();
 
   const notify = (text) => toast(text);
 
@@ -138,6 +138,7 @@ const RegisterContainer = () => {
   ];
   const props = {
     text,
+    regSection,
     registered,
     handleSubmit,
     isSubmitting,

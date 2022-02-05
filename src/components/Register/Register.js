@@ -5,6 +5,7 @@ import Loader from "../Loader";
 
 const Register = ({
   text,
+  regSection,
   registered,
   handleSubmit,
   isSubmitting,
@@ -17,6 +18,7 @@ const Register = ({
     <div
       className="bg-cover py-12 sm:py-14 md:py-16 lg:py-18"
       style={{ backgroundImage: "url(/images/landing/bg-deals.svg)" }}
+      ref={regSection.ref}
     >
       <div className="mx-auto max-w-7xl sm:px-4">
         <div className="flex flex-col space-y-7 lg:flex-row lg:space-x-8 lg:items-center">
