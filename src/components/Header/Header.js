@@ -14,7 +14,7 @@ const Header = ({
   return (
     <div className="mx-auto overflow-hidden relative">
       <div className="absolute z-50 top-0 left-0 w-full">
-        <div className="max-w-7xl mx-auto flex justify-between items-center mt-8 mb-10 px-4">
+        <div className="max-w-7xl mx-auto flex flex-col gap-y-6 justify-between items-center mt-8 mb-10 px-4 xs:flex-row">
           <div>
             <a href="/">
               <img src="/images/landing/logo.png" alt="" />
